@@ -116,25 +116,31 @@
 </details>
 <details>
   <summary>
- 2.인터페이스 설계
-</summary>
-</details>
-
-<details>
-  <summary>
-  3.아키텍쳐 설계
+      인터페이스 설계
   </summary>
 </details>
-
 <details>
   <summary>
-  4.엔티티 관계 모형 기술
-</summary>
+      아키텍쳐 설계
+  </summary>
+
+    <div align=center><h1>📚TECH STACKS</h1></div>
+    <div align=center> 
+      <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+      <br>
+      
+      <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
+      <br>
+    </div>
 </details>
-
 <details>
   <summary>
-5.데이터베이스 설계
-</summary>
+      엔티티 관계 모형 기술
+  </summary>
+</details>
+<details>
+  <summary>
+      데이터베이스 설계
+  </summary>
 </details>
 
