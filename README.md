@@ -1,7 +1,7 @@
 # CloneTving 백엔드
 
 <details>
-    <summary style="font-size: 20px"> 사용자 요구사항 명세서</summary>
+    <summary> 사용자 요구사항 명세서</summary>
     <div>
       <ul style="font">
         <li>
@@ -125,6 +125,7 @@
   </summary>
 
     <div align=center><h1>📚TECH STACKS</h1></div>
+    
     <div align=center> 
       <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
       <br>
