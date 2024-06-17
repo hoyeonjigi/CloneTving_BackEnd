@@ -1,0 +1,61 @@
+#default Profile
+server:
+  port: 8080
+
+---
+#develop Profile
+spring:
+  profiles:
+    active: dev
+    include: dev
+
+  jpa:
+    hibernate:
+      ddl-auto: none #테이블 자동생성 X
+
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.sql: debug
+
+---
+#production Profile
+spring:
+  profiles:
+    active: prod
+    include: prod
+
+  jpa:
+    hibernate:
+      ddl-auto: none #테이블 자동생성 X
+
+logging:
+  level:
+    org.hibernate.sql: warn
+
+---
+#test Profile
+spring:
+  profiles:
+    active: test
+
+  datasource:
+    url: jdbc:h2:mem:test;MODE=MySQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop #테이블 자동생성.
+
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.sql: debug
