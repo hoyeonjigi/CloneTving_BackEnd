@@ -41,6 +41,24 @@
           </ol>
         </li>
         <li>
+          로그인
+          <ol style="list-style-type:upper-roman">
+            <li>
+              로그인 시도
+              <ul>
+                <li>아이디 비밀번호 일치시 로그인 성공</li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li>
+                  자동로그인 체크박스 선택시 자동로그인
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+        <li>
           사용자 프로필
           <ol style="list-style-type:upper-roman">
             <li>
@@ -123,3 +141,4 @@
 5.데이터베이스 설계
 </summary>
 </details>
+
