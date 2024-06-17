@@ -129,11 +129,11 @@
       <br>
       <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
       <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
-      <img src="https://img.shields.io/badge/jpa-6DB33F?style=for-the-badge&logo=jpa&logoColor=white"/>
+      <img src="https://img.shields.io/badge/jpa-003545?style=for-the-badge&logo=jpa&logoColor=white"/>
       <img src="https://img.shields.io/badge/springdatajpa-6DB33F?style=for-the-badge&logo=springdatajpa&logoColor=white"/>
       <br>
       <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
-      <img src="https://img.shields.io/badge/querydsl-4479A1?style=for-the-badge&logo=querydsl&logoColor=white"/>
+      <img src="https://img.shields.io/badge/querydsl-4169E1?style=for-the-badge&logo=querydsl&logoColor=white"/>
       <br>
       <img src="https://img.shields.io/badge/amazonec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white"/>
       <img src="https://img.shields.io/badge/amazons3-569A31?style=for-the-badge&logo=amazonec2&logoColor=white"/>
@@ -144,7 +144,7 @@
     </div>
     <div>
         <br>
-        <p align="center"><img src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/105578140/0f3a849e-7395-4e41-abf4-fd29a67c82f9"></p>
+        <p align="center"><img src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/105578140/ce05915c-edc7-46cc-9edd-0f10afda7d6f"></p>
     </div>
 </details>
 <details>
