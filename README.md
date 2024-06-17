@@ -130,6 +130,9 @@
       <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
       <br>
     </div>
+    <div>
+        ![image](https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/105578140/8339a63e-9859-4fa4-b6ff-641e28f9703a)
+    </div>
 </details>
 <details>
   <summary>
