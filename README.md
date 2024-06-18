@@ -176,11 +176,12 @@
   <summary>
       엔티티 관계 모형 기술
   </summary>
+    <img width="846" alt="스크린샷 2024-06-18 오후 6 58 12" src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/119111149/4bd57112-abcc-4b2c-858f-e3f0b2f44af7">
 </details>
 <details>
   <summary>
       데이터베이스 설계
   </summary>
-     <img width="1142" alt="스크린샷 2024-06-18 오후 6 09 10" src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/119111149/85d78299-4c07-434e-916b-85d1af500026">
+     <img width="1059" alt="스크린샷 2024-06-18 오후 6 56 46" src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/119111149/28a17996-90ff-43d5-91e1-a6e894077696">
 </details>
 
