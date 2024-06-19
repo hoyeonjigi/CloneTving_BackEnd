@@ -182,6 +182,6 @@
   <summary>
       데이터베이스 설계
   </summary>
-     <img width="1059" alt="스크린샷 2024-06-18 오후 6 56 46" src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/119111149/28a17996-90ff-43d5-91e1-a6e894077696">
+<img width="1173" alt="스크린샷 2024-06-19 오후 8 18 25" src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/119111149/e576b1f5-17cf-4a88-8289-c7244da8b982">
 </details>
 
