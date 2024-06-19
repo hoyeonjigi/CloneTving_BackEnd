@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Profile {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "profile_id")
     private Long id;
 
@@ -18,7 +18,9 @@ public class Profile {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    private String profileImage;
+    private String profileName;
+
+    private String profileImageUrl;
 
     private boolean child;
 }

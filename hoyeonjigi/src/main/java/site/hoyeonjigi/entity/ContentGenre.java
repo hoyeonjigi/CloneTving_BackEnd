@@ -11,7 +11,7 @@ import site.hoyeonjigi.entity.content.Content;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ContentGenre {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "content_genre_id")
     private Long id;
 

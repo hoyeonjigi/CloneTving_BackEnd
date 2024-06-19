@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @DiscriminatorColumn(name = "DTYPE")
 public abstract class Content {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "content_id")
     private Long id;
 

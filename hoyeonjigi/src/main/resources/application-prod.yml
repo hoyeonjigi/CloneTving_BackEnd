@@ -1,6 +1,19 @@
+#production Profile
 spring:
+  config:
+    activate:
+      on-profile: prod
+
   datasource:
-    url:
-    username:
-    password:
-    driver-class-name:
+    url: ${datasource.url}
+    username: ${datasource.username}
+    password: ${datasource.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    org.hibernate.sql: warn

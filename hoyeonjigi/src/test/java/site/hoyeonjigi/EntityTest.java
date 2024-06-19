@@ -7,7 +7,6 @@ import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 @Transactional
-@ActiveProfiles(value = "local")
 public class EntityTest {
 
     @Test
