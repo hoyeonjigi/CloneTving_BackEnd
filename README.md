@@ -171,7 +171,7 @@
     </div>
     <div>
         <br>
-        <p align="center"><img src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/105578140/c730ea7f-055b-4fc1-bcc9-f9695497d12f"></p>
+        <p align="center"><img src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/105578140/c9141693-2896-426f-8361-81d8d1dcfde8"></p>
     </div>
 </details>
 <details>
