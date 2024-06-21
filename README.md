@@ -147,7 +147,7 @@
 <details>
   <summary>
       아키텍쳐 설계
-  </summary>
+  </summary> 
     <div align=center><h1>📚TECH STACKS</h1></div>
     <div align=center> 
       <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
@@ -156,8 +156,10 @@
       <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
       <img src="https://img.shields.io/badge/jpa-003545?style=for-the-badge&logo=jpa&logoColor=white"/>
       <img src="https://img.shields.io/badge/springdatajpa-6DB33F?style=for-the-badge&logo=springdatajpa&logoColor=white"/>
+      <img src="https://img.shields.io/badge/springsecurity-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white"/>
       <br>
       <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+      <img src="https://img.shields.io/badge/redis-FF4438?style=for-the-badge&logo=redis&logoColor=white"/>
       <img src="https://img.shields.io/badge/querydsl-4169E1?style=for-the-badge&logo=querydsl&logoColor=white"/>
       <br>
       <img src="https://img.shields.io/badge/amazonec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white"/>
@@ -169,7 +171,7 @@
     </div>
     <div>
         <br>
-        <p align="center"><img src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/105578140/ce05915c-edc7-46cc-9edd-0f10afda7d6f"></p>
+        <p align="center"><img src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/105578140/c730ea7f-055b-4fc1-bcc9-f9695497d12f"></p>
     </div>
 </details>
 <details>
