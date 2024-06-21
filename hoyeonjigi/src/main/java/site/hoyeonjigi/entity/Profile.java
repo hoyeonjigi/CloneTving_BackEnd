@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import site.hoyeonjigi.entity.member.Member;
 
 @Entity
 @Getter
@@ -20,7 +21,9 @@ public class Profile {
 
     private String profileName;
 
-    private String profileImageUrl;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "profile_image_id")
+    private ProfileImage profileImage;
 
     private boolean child;
 }

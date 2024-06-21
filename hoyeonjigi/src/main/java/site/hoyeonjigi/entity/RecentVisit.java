@@ -1,9 +1,7 @@
 package site.hoyeonjigi.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import site.hoyeonjigi.entity.content.Content;
 
 import java.time.LocalDateTime;

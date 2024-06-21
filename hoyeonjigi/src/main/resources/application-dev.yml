@@ -5,7 +5,7 @@ spring:
       on-profile: dev
 
   datasource:
-    url: ${datasource.url}
+    url: jdbc:mysql://${datasource.url}:3306/ott_tving_dev?useUnicode=true&characterEncoding=UTF-8
     username: ${datasource.username}
     password: ${datasource.password}
     driver-class-name: com.mysql.cj.jdbc.Driver

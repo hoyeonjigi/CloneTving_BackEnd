@@ -1,13 +1,13 @@
-package site.hoyeonjigi.entity;
+package site.hoyeonjigi.entity.member;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
 public class Member {
 
     @Id
@@ -18,6 +18,9 @@ public class Member {
     private String loginId;
 
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    private RoleType role;
 
     private String email;
 
