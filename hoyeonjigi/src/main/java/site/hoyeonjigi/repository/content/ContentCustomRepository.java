@@ -5,5 +5,5 @@ import org.springframework.data.domain.Pageable;
 import site.hoyeonjigi.entity.content.Content;
 
 public interface ContentCustomRepository {
-    Page<Content> findContentsByTypeAndSort(String type, String sort, Pageable pageable);
+    Page<Content> findContentsByTypeAndSortOrGenre(String type, String sort, String genreName, String title, Pageable pageable);
 }

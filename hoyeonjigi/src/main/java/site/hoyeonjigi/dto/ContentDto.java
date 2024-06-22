@@ -2,9 +2,12 @@ package site.hoyeonjigi.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import site.hoyeonjigi.entity.ContentGenre;
 import site.hoyeonjigi.entity.content.Content;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,6 +19,7 @@ public class ContentDto {
     private int viewCount;
     private LocalDate releaseDate;
     private boolean grade;
+    private List<Long> genreIds = new ArrayList<>();
 
     public ContentDto(Content content){
         this.contentId = content.getId();
@@ -25,5 +29,8 @@ public class ContentDto {
         this.viewCount = content.getViewCount();
         this.releaseDate = content.getReleaseDate();
         this.grade = content.isGrade();
+        for(ContentGenre contentGenre : content.getContentGenres()){
+            this.genreIds.add(contentGenre.getId());
+        }
     }
 }

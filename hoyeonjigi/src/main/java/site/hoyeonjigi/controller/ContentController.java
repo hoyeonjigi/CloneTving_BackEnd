@@ -14,12 +14,29 @@ import site.hoyeonjigi.service.ContentService;
 @Slf4j
 public class ContentController {
     private final ContentService contentService;
-    //인기순, 최신순 데이터 조회 반환(Page)
-    @GetMapping("/{type}")
-    public ResponseEntity<Page<ContentDto>> content(@PathVariable("type") String type,
-                                                    @RequestParam(value = "sort") String sort,
-                                                    @RequestParam(value = "page", defaultValue = "0") int page){
-        Page<ContentDto> contents = contentService.findContents(type, sort, page);
+    //인기순, 최신순, 장르별 데이터 조회 파라미터로 옵션 추가 반환(Page) 파라미터 (latest, popular, genre, title)
+    @GetMapping
+    public ResponseEntity<Page<ContentDto>> byOptions(@RequestParam(value = "type",required = false) String type,
+                                                      @RequestParam(value = "sort", defaultValue = "latest") String sort,
+                                                      @RequestParam(value = "page", defaultValue = "0") int page,
+                                                      @RequestParam(value = "genreName", required = false) String genreName,
+                                                      @RequestParam(value = "title", required = false) String title){
+        Page<ContentDto> contents = contentService.findContentsByOptions(type, sort,genreName,title, page);
         return ResponseEntity.ok(contents);
     }
+
+    //컨텐츠 조회수 증가
+    @GetMapping("/{contentId}/view")
+    public ResponseEntity<Void> contentAddViewCount(@PathVariable("contentId") Long contentId){
+        contentService.addViewCount(contentId);
+        return ResponseEntity.noContent().build();
+    }
+
+    //컨텐츠 아이디로 조회
+    @GetMapping("/{contentId}")
+    public ResponseEntity<ContentDto> contentsById(@PathVariable("contentId") Long contentId){
+        ContentDto content = contentService.findContentById(contentId);
+        return ResponseEntity.ok(content);
+    }
+
 }

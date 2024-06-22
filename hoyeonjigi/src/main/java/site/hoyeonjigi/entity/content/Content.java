@@ -4,8 +4,11 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import site.hoyeonjigi.entity.ContentGenre;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -31,7 +34,16 @@ public abstract class Content {
     private String poster;
 
     private boolean grade;
+
     @Column(name = "DTYPE" , insertable = false, updatable = false)
     private String dType;
 
+    @OneToMany(mappedBy = "content", fetch = FetchType.LAZY)
+    private List<ContentGenre> contentGenres = new ArrayList<>();
+
+    public void addViewCount(){
+        if(this.viewCount >= 0){
+            this.viewCount = viewCount + 1;
+        }
+    }
 }
