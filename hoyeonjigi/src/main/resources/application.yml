@@ -5,8 +5,8 @@ server:
 jwt:
   secret: src/main/resources/files/secretkey.txt
   token:
-    access-expiration-time: 300000  # 12시간
-    refresh-expiration-time: 300000  # 7일
+    access-expiration-time: 300000
+    refresh-expiration-time: 300000
 
 spring:
   data:
