@@ -25,12 +25,14 @@ public class ContentController {
         return ResponseEntity.ok(contents);
     }
 
+    //컨텐츠 조회수 증가
     @GetMapping("/{contentId}/view")
     public ResponseEntity<Void> contentAddViewCount(@PathVariable("contentId") Long contentId){
         contentService.addViewCount(contentId);
         return ResponseEntity.noContent().build();
     }
 
+    //컨텐츠 아이디로 조회
     @GetMapping("/{contentId}")
     public ResponseEntity<ContentDto> contentsById(@PathVariable("contentId") Long contentId){
         ContentDto content = contentService.findContentById(contentId);
