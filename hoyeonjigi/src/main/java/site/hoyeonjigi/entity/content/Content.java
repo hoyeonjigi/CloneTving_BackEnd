@@ -31,6 +31,7 @@ public abstract class Content {
     private String poster;
 
     private boolean grade;
+
     @Column(name = "DTYPE" , insertable = false, updatable = false)
     private String dType;
 
