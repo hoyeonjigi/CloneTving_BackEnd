@@ -16,11 +16,11 @@ public class ContentController {
     private final ContentService contentService;
     //인기순, 최신순, 장르별 데이터 조회 파라미터로 옵션 추가 반환(Page) 파라미터 (latest, popular, genre, title)
     @GetMapping
-    public ResponseEntity<Page<ContentDto>> byOptions(@RequestParam(value = "type",required = false) String type,
-                                                      @RequestParam(value = "sort", defaultValue = "latest") String sort,
-                                                      @RequestParam(value = "page", defaultValue = "0") int page,
-                                                      @RequestParam(value = "genreName", required = false) String genreName,
-                                                      @RequestParam(value = "title", required = false) String title){
+    public ResponseEntity<Page<ContentDto>> contentsByOptions(@RequestParam(value = "type",required = false) String type,
+                                                     @RequestParam(value = "sort", defaultValue = "latest") String sort,
+                                                     @RequestParam(value = "page", defaultValue = "0") int page,
+                                                     @RequestParam(value = "genreName", required = false) String genreName,
+                                                     @RequestParam(value = "title", required = false) String title){
         Page<ContentDto> contents = contentService.findContentsByOptions(type, sort,genreName,title, page);
         return ResponseEntity.ok(contents);
     }

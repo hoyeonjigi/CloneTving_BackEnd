@@ -8,8 +8,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ProfileImage {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "profile_image_id")
     private Long id;
 
@@ -18,5 +17,4 @@ public class ProfileImage {
     private String profileImageUrl;
 
     private String profileImageCategory;
-
 }

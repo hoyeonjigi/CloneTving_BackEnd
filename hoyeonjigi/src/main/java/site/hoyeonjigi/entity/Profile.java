@@ -37,4 +37,17 @@ public class Profile {
     private ProfileImage profileImage;
 
     private boolean child;
+
+    public Profile(Member member, String profileName, ProfileImage profileImage, boolean child){
+        this.member = member;
+        this.profileName = profileName;
+        this.profileImage = profileImage;
+        this.child = child;
+    }
+
+    public void editProfile(String profileName, ProfileImage profileImage, boolean child){
+        this.profileName = profileName;
+        this.profileImage = profileImage;
+        this.child = child;
+    }
 }
