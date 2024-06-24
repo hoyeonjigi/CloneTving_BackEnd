@@ -1,4 +1,4 @@
-package site.hoyeonjigi.dto;
+package site.hoyeonjigi.dto.profile;
 
 import lombok.Getter;
 import lombok.Setter;

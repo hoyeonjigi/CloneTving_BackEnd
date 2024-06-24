@@ -1,13 +1,13 @@
-package site.hoyeonjigi.dto;
+package site.hoyeonjigi.dto.profile;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter
 @Getter
-public class ProfileEditDto {
+@Setter
+public class ProfileRegisterDto {
     @NotBlank(message = "profileName Not Blank")
     private String profileName;
     @NotNull(message = "profileImgId Not Null")
