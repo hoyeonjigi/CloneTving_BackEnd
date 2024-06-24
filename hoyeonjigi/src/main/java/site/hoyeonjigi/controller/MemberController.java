@@ -2,6 +2,7 @@ package site.hoyeonjigi.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import site.hoyeonjigi.dto.JsonWebTokenDto;
@@ -17,27 +18,33 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping("/register")
-    public Long register(@RequestBody MemberRegisterDto memberRegisterDto) {
+    public ResponseEntity<Long> register(@RequestBody MemberRegisterDto memberRegisterDto) {
 
-        return memberService.register(memberRegisterDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(memberService.register(memberRegisterDto));
     }
 
     @PostMapping("/login")
-    public JsonWebTokenDto login(@RequestBody MemberLoginDto memberLoginDto) {
+    public ResponseEntity<JsonWebTokenDto> login(@RequestBody MemberLoginDto memberLoginDto) {
 
-        return memberService.login(memberLoginDto);
+        return ResponseEntity.ok(memberService.login(memberLoginDto));
     }
 
     @PostMapping("/reissue")
-    public JsonWebTokenDto reissue(HttpServletRequest request) {
+    public ResponseEntity<JsonWebTokenDto> reissue(HttpServletRequest request) {
 
-        return memberService.reissue(request);
+        return ResponseEntity.ok(memberService.reissue(request));
     }
 
     @GetMapping("/duplication-check")
-    public boolean reissue(@RequestParam String loginId) {
+    public ResponseEntity<Boolean> reissue(@RequestParam String loginId) {
 
-        return memberService.duplicateCheck(loginId);
+        return ResponseEntity.ok(memberService.duplicateCheck(loginId));
+    }
+
+    @GetMapping("/delete")
+    public ResponseEntity<Boolean> delete(@RequestParam String loginId) {
+
+        return ResponseEntity.ok(memberService.delete(loginId));
     }
 
 }

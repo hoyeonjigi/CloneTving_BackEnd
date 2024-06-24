@@ -93,4 +93,9 @@ public class MemberService {
 
         return memberRepository.existsByLoginId(loginId);
     }
+
+    public Boolean delete(String loginId) {
+
+        return memberRepository.deleteByLoginId(loginId);
+    }
 }
