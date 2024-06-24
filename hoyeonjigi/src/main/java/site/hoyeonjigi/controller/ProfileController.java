@@ -40,12 +40,19 @@ public class ProfileController {
     public ResponseEntity<ProfileDto> editProfile(@PathVariable("profileId") Long profileId, Authentication authentication,
                                                   @RequestBody @Validated ProfileEditDto profileEditDto){
         String loginId = getLoginId(authentication);
-
-        return null;
+        ProfileDto editProfile = profileService.edit(loginId, profileId, profileEditDto);
+        return ResponseEntity.ok(editProfile);
     }
 
     private String getLoginId(Authentication authentication) {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         return userDetails.getUsername();
+    }
+
+    @DeleteMapping("/{profileId}")
+    public ResponseEntity<Void> deleteProfile(@PathVariable("profileId") Long profileId, Authentication authentication){
+        String loginId = getLoginId(authentication);
+        profileService.delete(loginId,profileId);
+        return ResponseEntity.noContent().build();
     }
 }

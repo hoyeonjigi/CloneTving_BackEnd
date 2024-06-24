@@ -64,4 +64,10 @@ public class ProfileService {
         profile.editProfile(profileEditDto.getProfileName(), editProfileImage, profileEditDto.getChild());
         return new ProfileDto(profile);
     }
+
+    public void delete(String loginId, Long profileId){
+        Profile profile = profileRepository.findProfileByLoginIdAndProfileId(loginId, profileId).orElseThrow(
+                () -> new NoSuchElementException("Not Found Profile"));
+        profileRepository.delete(profile);
+    }
 }
