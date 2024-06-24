@@ -65,6 +65,8 @@ public class ProfileService {
         return new ProfileDto(profile);
     }
 
+
+    //TODO 댓글 또는 최근 기록 삭제시 지우는 로직 추가해야함
     public void delete(String loginId, Long profileId){
         Profile profile = profileRepository.findProfileByLoginIdAndProfileId(loginId, profileId).orElseThrow(
                 () -> new NoSuchElementException("Not Found Profile"));
