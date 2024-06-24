@@ -9,6 +9,17 @@ import site.hoyeonjigi.entity.member.Member;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Table(name="profile",
+        uniqueConstraints= {
+                @UniqueConstraint(
+                        name = "unique_member_id_profile_name",
+                        columnNames = {
+                                "member_id",
+                                "profile_name"
+                        }
+                )
+        }
+)
 public class Profile {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -16,8 +16,6 @@ import site.hoyeonjigi.entity.member.Member;
 import site.hoyeonjigi.entity.member.RoleType;
 import site.hoyeonjigi.repository.MemberRepository;
 
-import java.util.Optional;
-
 
 @Service
 @Transactional
