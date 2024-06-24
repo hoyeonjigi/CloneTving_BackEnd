@@ -13,5 +13,5 @@ public class ProfileImage {
     private Long id;
 
     private String profileImageUrl;
-
+    private String profileImageName;
 }
