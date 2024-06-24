@@ -12,6 +12,9 @@ public class ProfileImage {
     @Column(name = "profile_image_id")
     private Long id;
 
-    private String profileImageUrl;
     private String profileImageName;
+
+    private String profileImageUrl;
+
+    private String category;
 }

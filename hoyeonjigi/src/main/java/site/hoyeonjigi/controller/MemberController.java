@@ -34,5 +34,10 @@ public class MemberController {
         return memberService.reissue(request);
     }
 
+    @GetMapping("/duplication-check")
+    public boolean reissue(@RequestParam String loginId) {
+
+        return memberService.duplicateCheck(loginId);
+    }
 
 }

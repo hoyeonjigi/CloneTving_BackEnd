@@ -16,8 +16,6 @@ import site.hoyeonjigi.entity.member.Member;
 import site.hoyeonjigi.entity.member.RoleType;
 import site.hoyeonjigi.repository.MemberRepository;
 
-import java.util.Optional;
-
 
 @Service
 @Transactional
@@ -53,7 +51,7 @@ public class MemberService {
 
     public Long register(MemberRegisterDto memberRegisterDto) throws IllegalArgumentException {
 
-        if (memberRepository.existsByLoginId(memberRegisterDto.getLoginId())) {
+        if (duplicateCheck(memberRegisterDto.getLoginId())) {
             throw new IllegalArgumentException("이미 존재하는 아이디입니다.");
         }
 
@@ -89,5 +87,10 @@ public class MemberService {
         }
 
         throw new RuntimeException("토큰 갱신에 실패했습니다.");
+    }
+
+    public boolean duplicateCheck(String loginId) {
+
+        return memberRepository.existsByLoginId(loginId);
     }
 }
