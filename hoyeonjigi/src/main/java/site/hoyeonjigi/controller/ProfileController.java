@@ -8,9 +8,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import site.hoyeonjigi.dto.ProfileDto;
-import site.hoyeonjigi.dto.ProfileEditDto;
-import site.hoyeonjigi.dto.ProfileRegisterDto;
+import site.hoyeonjigi.dto.profile.ProfileDto;
+import site.hoyeonjigi.dto.profile.ProfileEditDto;
+import site.hoyeonjigi.dto.profile.ProfileRegisterDto;
 import site.hoyeonjigi.service.ProfileService;
 
 import java.util.List;

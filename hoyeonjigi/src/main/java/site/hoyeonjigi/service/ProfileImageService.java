@@ -3,7 +3,7 @@ package site.hoyeonjigi.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import site.hoyeonjigi.dto.ProfileImageDto;
+import site.hoyeonjigi.dto.profile.ProfileImageDto;
 import site.hoyeonjigi.entity.ProfileImage;
 import site.hoyeonjigi.repository.ProfileImageRepository;
 
