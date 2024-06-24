@@ -16,5 +16,5 @@ public class ProfileImage {
 
     private String profileImageUrl;
 
-    private String category;
+    private String profileImageCategory;
 }

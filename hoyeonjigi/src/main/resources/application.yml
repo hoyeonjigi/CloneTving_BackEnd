@@ -5,7 +5,7 @@ server:
 jwt:
   secret: src/main/resources/files/secretkey.txt
   token:
-    access-expiration-time: 300000
+    access-expiration-time: 7200000
     refresh-expiration-time: 300000
 
 spring:
