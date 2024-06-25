@@ -6,6 +6,8 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import site.hoyeonjigi.common.exception.DuplicateResourceException;
+import site.hoyeonjigi.common.exception.IncorretSortTypeException;
 
 @RestControllerAdvice
 public class ApiExceptionHandler {
@@ -17,8 +19,8 @@ public class ApiExceptionHandler {
                 .body(e.getMessage());
     }
 
-    @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity<String> errorHandler (IllegalArgumentException e) {
+    @ExceptionHandler({IllegalArgumentException.class, DuplicateResourceException.class})
+    public ResponseEntity<String> errorHandler (Exception e) {
         return ResponseEntity
                 .status(HttpStatus.CONFLICT)
                 .body(e.getMessage());
@@ -28,6 +30,13 @@ public class ApiExceptionHandler {
     public ResponseEntity<String> errorHandler (BadCredentialsException e) {
         return ResponseEntity
                 .status(HttpStatus.FORBIDDEN)
+                .body(e.getMessage());
+    }
+
+    @ExceptionHandler(IncorretSortTypeException.class)
+    public ResponseEntity<String> errorHandler (IncorretSortTypeException e) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
                 .body(e.getMessage());
     }
 }

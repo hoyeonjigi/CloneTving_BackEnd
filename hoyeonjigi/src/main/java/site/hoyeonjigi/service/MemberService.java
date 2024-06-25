@@ -1,24 +1,24 @@
 package site.hoyeonjigi.service;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import site.hoyeonjigi.common.JwtUtils;
 import site.hoyeonjigi.common.RedisUtils;
 import site.hoyeonjigi.dto.JsonWebTokenDto;
-import site.hoyeonjigi.dto.MemberLoginDto;
-import site.hoyeonjigi.dto.MemberRegisterDto;
+import site.hoyeonjigi.dto.member.MemberLoginDto;
+import site.hoyeonjigi.dto.member.MemberRegisterDto;
 import site.hoyeonjigi.entity.member.Member;
 import site.hoyeonjigi.entity.member.RoleType;
 import site.hoyeonjigi.repository.MemberRepository;
 
 
 @Service
-@Transactional
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class MemberService {
 
@@ -49,6 +49,7 @@ public class MemberService {
                 .build();
     }
 
+    @Transactional
     public Long register(MemberRegisterDto memberRegisterDto) throws IllegalArgumentException {
 
         if (duplicateCheck(memberRegisterDto.getLoginId())) {
@@ -94,6 +95,7 @@ public class MemberService {
         return memberRepository.existsByLoginId(loginId);
     }
 
+    @Transactional
     public Boolean delete(String loginId) {
 
         return memberRepository.deleteByLoginId(loginId);

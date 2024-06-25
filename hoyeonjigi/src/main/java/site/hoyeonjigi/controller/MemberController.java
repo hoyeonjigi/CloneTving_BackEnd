@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import site.hoyeonjigi.dto.JsonWebTokenDto;
-import site.hoyeonjigi.dto.MemberLoginDto;
-import site.hoyeonjigi.dto.MemberRegisterDto;
+import site.hoyeonjigi.dto.member.MemberLoginDto;
+import site.hoyeonjigi.dto.member.MemberRegisterDto;
 import site.hoyeonjigi.service.MemberService;
 
 @RestController
@@ -41,7 +41,7 @@ public class MemberController {
         return ResponseEntity.ok(memberService.duplicateCheck(loginId));
     }
 
-    @GetMapping("/delete")
+    @DeleteMapping("/delete")
     public ResponseEntity<Boolean> delete(@RequestParam String loginId) {
 
         return ResponseEntity.ok(memberService.delete(loginId));

@@ -2,9 +2,7 @@ package site.hoyeonjigi.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import site.hoyeonjigi.entity.content.Content;
 
 import java.time.LocalDateTime;
@@ -12,6 +10,8 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
 public class Evaluation {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +29,31 @@ public class Evaluation {
     private String review;
 
     private LocalDateTime ratingTime;
+
+    private Long goodCount;
+
+    private Long badCount;
+
+    private Double rating;
+
+    public void editReview(String review, Double rating) {
+        this.review = review;
+        this.rating = rating;
+    }
+
+    public void increaseGoodCount() {
+        this.goodCount = goodCount + 1;
+    }
+
+    public void increaseBadCount() {
+        this.badCount = badCount + 1;;
+    }
+
+    public void decreaseGoodCount() {
+        this.goodCount = goodCount - 1;
+    }
+
+    public void decreaseBadCount() {
+        this.badCount = badCount - 1;;
+    }
 }

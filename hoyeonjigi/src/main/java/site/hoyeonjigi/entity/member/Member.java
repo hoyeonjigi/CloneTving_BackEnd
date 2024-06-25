@@ -47,6 +47,7 @@ public class Member {
     private boolean emailAgreement;
 
     @OneToMany(mappedBy = "member")
+    @Builder.Default
     private List<Profile> profiles = new ArrayList<>();
 
 }
