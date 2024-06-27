@@ -1,26 +1,27 @@
 package site.hoyeonjigi.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import site.hoyeonjigi.common.exception.IncorretSortTypeException;
 import site.hoyeonjigi.dto.evaluation.*;
 import site.hoyeonjigi.service.EvaluationService;
 
 @RestController
 @RequestMapping("/evaluation")
 @RequiredArgsConstructor
-@Slf4j
 public class EvaluationController {
 
     private final EvaluationService evaluationService;
 
     //리뷰 전체 조회 (최신순/인기순)
-    @GetMapping("/retrieve")
-    public ResponseEntity<Page<ReviewRetrieveDto>> evaluationsByContentId(@ModelAttribute EvaluationSearchCondition condition, Pageable pageable) {
-        log.info("condition = {}, {}", condition.getContentId(), condition.getSortType());
+    @PostMapping("/retrieve")
+    public ResponseEntity<Page<ReviewRetrieveDto>> evaluationsByContentId(@RequestBody @Valid EvaluationSearchCondition condition, Pageable pageable) {
 
         return ResponseEntity.ok(evaluationService.getAllEvaluationsByContentId(condition, pageable));
     }
@@ -36,14 +37,14 @@ public class EvaluationController {
 
     //리뷰 작성
     @PostMapping("/register")
-    public ResponseEntity<Long> registerEvaluation(@RequestBody EvaluationRegisterDto evaluationRegisterDto) {
+    public ResponseEntity<Long> registerEvaluation(@RequestBody @Valid EvaluationRegisterDto evaluationRegisterDto) {
 
-        return ResponseEntity.ok(evaluationService.register(evaluationRegisterDto));
+        return ResponseEntity.status(HttpStatus.CREATED).body(evaluationService.register(evaluationRegisterDto));
     }
 
     //리뷰 수정
     @PatchMapping("/edit")
-    public ResponseEntity<?> registerEvaluation(@RequestBody ReviewEditDto reviewEditDto) {
+    public ResponseEntity<?> registerEvaluation(@RequestBody @Valid ReviewEditDto reviewEditDto) {
 
         evaluationService.edit(reviewEditDto);
 
@@ -69,7 +70,7 @@ public class EvaluationController {
     }
     //좋아요, 싫어요
     @PatchMapping("/popularity")
-    public ResponseEntity<?> updatePopularity(@RequestBody EvaluationPopularitySetDto evaluationPopularitySetDto) {
+    public ResponseEntity<?> updatePopularity(@RequestBody @Valid EvaluationPopularitySetDto evaluationPopularitySetDto) {
 
         evaluationService.updatePopularity(evaluationPopularitySetDto);
 

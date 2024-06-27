@@ -1,6 +1,7 @@
 package site.hoyeonjigi.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,13 +19,13 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping("/register")
-    public ResponseEntity<Long> register(@RequestBody MemberRegisterDto memberRegisterDto) {
+    public ResponseEntity<Long> register(@RequestBody @Valid MemberRegisterDto memberRegisterDto) {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(memberService.register(memberRegisterDto));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<JsonWebTokenDto> login(@RequestBody MemberLoginDto memberLoginDto) {
+    public ResponseEntity<JsonWebTokenDto> login(@RequestBody @Valid MemberLoginDto memberLoginDto) {
 
         return ResponseEntity.ok(memberService.login(memberLoginDto));
     }
@@ -36,7 +37,7 @@ public class MemberController {
     }
 
     @GetMapping("/duplication-check")
-    public ResponseEntity<Boolean> reissue(@RequestParam String loginId) {
+    public ResponseEntity<Boolean> duplicateCheck(@RequestParam String loginId) {
 
         return ResponseEntity.ok(memberService.duplicateCheck(loginId));
     }
