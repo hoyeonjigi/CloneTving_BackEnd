@@ -70,10 +70,7 @@ public class MemberService {
         return memberRepository.save(member).getId();
     }
 
-    public JsonWebTokenDto reissue(HttpServletRequest request) {
-
-        // 리프레쉬 토큰 추출.
-        String refreshToken = request.getHeader("Refresh-Token");
+    public JsonWebTokenDto reissue(String refreshToken) {
 
         // validateToken 메서드로 토큰 유효성 검사
         if (refreshToken != null && jwtUtils.validateToken(refreshToken)) {
@@ -96,7 +93,7 @@ public class MemberService {
     }
 
     @Transactional
-    public Boolean delete(String loginId) {
+    public Long delete(String loginId) {
 
         return memberRepository.deleteByLoginId(loginId);
     }

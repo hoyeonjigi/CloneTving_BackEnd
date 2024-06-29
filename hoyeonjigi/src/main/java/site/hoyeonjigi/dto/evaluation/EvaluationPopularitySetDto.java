@@ -17,4 +17,9 @@ public class EvaluationPopularitySetDto {
     @NotNull(message = "activation은 필수 입력 값입니다.")
     private Boolean activation;
 
+    public EvaluationPopularitySetDto(Long evaluationId, EvaluationCountType countType, Boolean activation) {
+        this.evaluationId = evaluationId;
+        this.countType = countType;
+        this.activation = activation;
+    }
 }

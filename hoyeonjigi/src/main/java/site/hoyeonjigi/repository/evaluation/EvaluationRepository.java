@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface EvaluationRepository extends JpaRepository<Evaluation, Long>, EvaluationRepositoryCustom {
 
-    Optional<Evaluation> findByContentIdAndProfileId(Long contentId, Long profileId);
+    Optional<Evaluation> findEvaluationByContentIdAndProfileId(Long contentId, Long profileId);
 }

@@ -26,4 +26,14 @@ public class MemberRegisterDto {
     private boolean smsAgreement;
 
     private boolean emailAgreement;
+
+    public MemberRegisterDto(String loginId, String password, String email, boolean adultStatus, boolean privacyAgreement, boolean smsAgreement, boolean emailAgreement) {
+        this.loginId = loginId;
+        this.password = password;
+        this.email = email;
+        this.adultStatus = adultStatus;
+        this.privacyAgreement = privacyAgreement;
+        this.smsAgreement = smsAgreement;
+        this.emailAgreement = emailAgreement;
+    }
 }

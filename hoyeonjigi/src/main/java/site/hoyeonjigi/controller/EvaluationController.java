@@ -23,7 +23,11 @@ public class EvaluationController {
     @PostMapping("/retrieve")
     public ResponseEntity<Page<ReviewRetrieveDto>> evaluationsByContentId(@RequestBody @Valid EvaluationSearchCondition condition, Pageable pageable) {
 
-        return ResponseEntity.ok(evaluationService.getAllEvaluationsByContentId(condition, pageable));
+        Long contentId = condition.getContentId();
+        EvaluationSortType sortType = condition.getSortType();
+
+
+        return ResponseEntity.ok(evaluationService.getAllEvaluationsByContentId(contentId, sortType, pageable));
     }
 
     //해당 프로필의 리뷰 조회
@@ -72,7 +76,11 @@ public class EvaluationController {
     @PatchMapping("/popularity")
     public ResponseEntity<?> updatePopularity(@RequestBody @Valid EvaluationPopularitySetDto evaluationPopularitySetDto) {
 
-        evaluationService.updatePopularity(evaluationPopularitySetDto);
+        Long evaluationId = evaluationPopularitySetDto.getEvaluationId();
+        EvaluationCountType countType = evaluationPopularitySetDto.getCountType();
+        Boolean activation = evaluationPopularitySetDto.getActivation();
+
+        evaluationService.updatePopularity(evaluationId, countType, activation);
 
         return ResponseEntity.ok().build();
     }

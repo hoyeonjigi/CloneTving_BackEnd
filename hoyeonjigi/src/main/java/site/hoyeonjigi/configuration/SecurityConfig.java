@@ -45,6 +45,7 @@ public class SecurityConfig {
                 .httpBasic(AbstractHttpConfigurer::disable) //BasicHttp 비활성화
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers(AUTH_WHITELIST).permitAll()
+                        .requestMatchers(HttpMethod.GET, "/member/duplication-check").permitAll()
                         .requestMatchers(HttpMethod.POST, "/member/login", "/member/register", "/member/reissue").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(new JwtAuthenticationFilter(jwtUtils, customUserDetailsService), UsernamePasswordAuthenticationFilter.class)

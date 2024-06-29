@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import site.hoyeonjigi.common.exception.DuplicateResourceException;
 import site.hoyeonjigi.common.exception.IncorretSortTypeException;
+import site.hoyeonjigi.common.exception.JwtRuntimeException;
 
 
 @RestControllerAdvice
@@ -48,6 +49,13 @@ public class ApiExceptionHandler {
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(e.getBindingResult().getAllErrors().get(0).getDefaultMessage());
+    }
+
+    @ExceptionHandler(JwtRuntimeException.class)
+    public ResponseEntity<String> jwtErrorHandler (JwtRuntimeException e) {
+        return ResponseEntity
+                .status(HttpStatus.FORBIDDEN)
+                .body(e.getMessage());
     }
 
 }

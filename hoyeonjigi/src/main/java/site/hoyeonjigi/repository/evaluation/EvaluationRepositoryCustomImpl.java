@@ -26,7 +26,7 @@ public class EvaluationRepositoryCustomImpl implements EvaluationRepositoryCusto
     }
 
     @Override
-    public Page<ReviewRetrieveDto> findAllEvaluationsByContentId(EvaluationSearchCondition condition, Pageable pageable) {
+    public Page<ReviewRetrieveDto> findAllEvaluationsByContentId(Long contentId, EvaluationSortType sortType, Pageable pageable) {
 
         QueryResults<ReviewRetrieveDto> results = queryFactory
                 .select(new QReviewRetrieveDto(
@@ -38,8 +38,8 @@ public class EvaluationRepositoryCustomImpl implements EvaluationRepositoryCusto
                         evaluation.badCount,
                         evaluation.rating))
                 .from(evaluation)
-                .leftJoin(evaluation.profile, profile)
-                .orderBy(setSortType(condition))
+                .where(evaluation.content.id.eq(contentId))
+                .orderBy(setSortType(sortType))
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())
                 .fetchResults(); //count쿼리가 추가로 실행.
@@ -64,10 +64,9 @@ public class EvaluationRepositoryCustomImpl implements EvaluationRepositoryCusto
         }
     }
 
-    private OrderSpecifier<?> setSortType(EvaluationSearchCondition condition) {
+    private OrderSpecifier<?> setSortType(EvaluationSortType sortType) {
 
         OrderSpecifier<?> orderSpecifier;
-        EvaluationSortType sortType = condition.getSortType();
 
         if (sortType.equals(EvaluationSortType.DEFAULT)) {
             orderSpecifier = evaluation.ratingTime.asc().nullsLast();

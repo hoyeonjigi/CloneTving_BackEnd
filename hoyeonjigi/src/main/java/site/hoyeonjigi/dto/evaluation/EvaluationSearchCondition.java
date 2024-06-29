@@ -12,4 +12,9 @@ public class EvaluationSearchCondition {
 
     @ValidEnum(enumClass = EvaluationSortType.class, message = "[DEFAULT, LATEST, POPULARITY] 중에서 정확한 타입을 적어주세요.")
     private EvaluationSortType sortType;
+
+    public EvaluationSearchCondition(Long contentId, EvaluationSortType sortType) {
+        this.contentId = contentId;
+        this.sortType = sortType;
+    }
 }

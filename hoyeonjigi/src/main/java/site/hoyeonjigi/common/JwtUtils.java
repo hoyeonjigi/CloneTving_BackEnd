@@ -6,6 +6,7 @@ import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import site.hoyeonjigi.common.exception.JwtRuntimeException;
 import site.hoyeonjigi.entity.member.Member;
 
 import javax.crypto.SecretKey;
@@ -81,16 +82,19 @@ public class JwtUtils {
     public boolean validateToken(String token) {
         try {
             extractClaims(token);
-            return true;
         } catch (io.jsonwebtoken.security.SecurityException | MalformedJwtException e) {
             log.info("Invalid JWT Token", e);
+            throw new JwtRuntimeException("유효하지 않은 JWT입니다.");
         } catch (ExpiredJwtException e) {
             log.info("Expired JWT Token", e);
+            throw new JwtRuntimeException("만료된 JWT입니다.");
         } catch (UnsupportedJwtException e) {
             log.info("Unsupported JWT Token", e);
+            throw new JwtRuntimeException("지원하지 않는 JWT입니다.");
         } catch (IllegalArgumentException e) {
             log.info("JWT claims string is empty.", e);
+            throw new JwtRuntimeException("적절하지 않은 JWT입니다.");
         }
-        return false;
+        return true;
     }
 }

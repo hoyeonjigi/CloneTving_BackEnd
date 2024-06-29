@@ -33,7 +33,9 @@ public class MemberController {
     @PostMapping("/reissue")
     public ResponseEntity<JsonWebTokenDto> reissue(HttpServletRequest request) {
 
-        return ResponseEntity.ok(memberService.reissue(request));
+        String refreshToken = request.getHeader("Refresh-Token");
+
+        return ResponseEntity.ok(memberService.reissue(refreshToken));
     }
 
     @GetMapping("/duplication-check")
@@ -43,7 +45,7 @@ public class MemberController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<Boolean> delete(@RequestParam String loginId) {
+    public ResponseEntity<Long> delete(@RequestParam String loginId) {
 
         return ResponseEntity.ok(memberService.delete(loginId));
     }

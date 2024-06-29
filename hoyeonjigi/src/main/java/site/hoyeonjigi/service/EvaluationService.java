@@ -28,9 +28,9 @@ public class EvaluationService {
     private final ProfileRepository profileRepository;
     private final ContentRepository contentRepository;
 
-    public Page<ReviewRetrieveDto> getAllEvaluationsByContentId(EvaluationSearchCondition condition, Pageable pageable) {
+    public Page<ReviewRetrieveDto> getAllEvaluationsByContentId(Long contentId,EvaluationSortType sortType, Pageable pageable) {
 
-        return evaluationRepository.findAllEvaluationsByContentId(condition, pageable);
+        return evaluationRepository.findAllEvaluationsByContentId(contentId, sortType, pageable);
     }
 
     @Transactional
@@ -61,7 +61,7 @@ public class EvaluationService {
 
     public ReviewRetrieveDto getEvaluationByProfileId(Long contentId, Long profileId) {
 
-        Evaluation evaluation = evaluationRepository.findByContentIdAndProfileId(contentId, profileId)
+        Evaluation evaluation = evaluationRepository.findEvaluationByContentIdAndProfileId(contentId, profileId)
                 .orElseThrow(() -> new UsernameNotFoundException("리뷰가 존재하지 않습니다."));
 
         return ReviewRetrieveDto.builder()
@@ -77,8 +77,7 @@ public class EvaluationService {
 
     @Transactional
     public void edit(ReviewEditDto reviewEditDto) {
-        Evaluation evaluation = evaluationRepository.findById(reviewEditDto.getEvaluationId())
-                .orElseThrow(() -> new UsernameNotFoundException("리뷰가 존재하지 않습니다."));
+        Evaluation evaluation = getEvaluationByEvaluationId(reviewEditDto.getEvaluationId());
 
         evaluation.editReview(reviewEditDto.getReview(), reviewEditDto.getRating());
     }
@@ -95,21 +94,18 @@ public class EvaluationService {
     }
 
     @Transactional
-    public void updatePopularity(EvaluationPopularitySetDto evaluationPopularitySetDto) {
+    public void updatePopularity(Long evaluationId,EvaluationCountType countType, Boolean activation) {
 
-        Evaluation evaluation = evaluationRepository.findById(evaluationPopularitySetDto.getEvaluationId())
-                .orElseThrow(() -> new UsernameNotFoundException("리뷰가 존재하지 않습니다."));
-
-        EvaluationCountType countType = evaluationPopularitySetDto.getCountType();
+        Evaluation evaluation = getEvaluationByEvaluationId(evaluationId);
 
         if (countType.equals(EvaluationCountType.GOOD)) {
-            if (evaluationPopularitySetDto.getActivation()) {
+            if (activation) {
                 evaluation.decreaseGoodCount();
             } else {
                 evaluation.increaseGoodCount();
             }
         } else if (countType.equals(EvaluationCountType.BAD)) {
-            if (evaluationPopularitySetDto.getActivation()) {
+            if (activation) {
                 evaluation.decreaseBadCount();
             } else {
                 evaluation.increaseBadCount();
@@ -117,5 +113,12 @@ public class EvaluationService {
         } else {
             throw new IllegalArgumentException("잘못된 요청입니다.");
         }
+    }
+
+    private Evaluation getEvaluationByEvaluationId(Long evaluationId) {
+        Evaluation evaluation = evaluationRepository.findById(evaluationId)
+                .orElseThrow(() -> new UsernameNotFoundException("리뷰가 존재하지 않습니다."));
+
+        return evaluation;
     }
 }

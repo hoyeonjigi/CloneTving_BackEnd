@@ -27,3 +27,8 @@ logging:
         type:
           descriptor:
             sql: trace # 파라미터 값 확인
+
+jwt:
+  token:
+    access-expiration-time: 1000
+    refresh-expiration-time: 1000

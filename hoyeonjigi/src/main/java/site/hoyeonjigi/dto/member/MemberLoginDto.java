@@ -11,4 +11,9 @@ public class MemberLoginDto {
 
     @NotBlank(message = "password은 필수 입력 값입니다.")
     private String password;
+
+    public MemberLoginDto(String loginId, String password) {
+        this.loginId = loginId;
+        this.password = password;
+    }
 }

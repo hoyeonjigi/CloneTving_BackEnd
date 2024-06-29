@@ -19,4 +19,11 @@ public class EvaluationRegisterDto {
 
     @NotNull(message = "rating은 필수 입력 값입니다.")
     private Double rating;
+
+    public EvaluationRegisterDto(Long profileId, Long contentId, String review, Double rating) {
+        this.profileId = profileId;
+        this.contentId = contentId;
+        this.review = review;
+        this.rating = rating;
+    }
 }
