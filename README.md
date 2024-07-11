@@ -1,5 +1,10 @@
 # CloneTving 백엔드
 
+# 프로젝트 소개
+- 학습 목적으로 클론 코딩 구현한 OTT Tving 사이트 API 서버입니다
+- <b> 스웨거 주소(API 명세) : ... </b>
+- <b> 사이트 링크 : https://clone-tving.vercel.app </b>
+- <b> 테스트 계정 : 아이디: test001 ,비밀번호 : 123
 <details>
     <summary> 사용자 요구사항 명세서</summary>
     <div>
