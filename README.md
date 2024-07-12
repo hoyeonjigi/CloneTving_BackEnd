@@ -183,7 +183,7 @@
   <summary>
       엔티티 관계 모형 기술
   </summary>
-    <img width="563" alt="스크린샷 2024-07-12 오후 2 37 17" src="https://github.com/user-attachments/assets/1685fdb6-c2c5-4337-94bf-3a2dffe67057">
+    <img width="814" alt="스크린샷 2024-07-12 오후 2 46 09" src="https://github.com/user-attachments/assets/8ad85571-5092-4951-be8d-aef0692782c6">
 </details>
 <details>
   <summary>
