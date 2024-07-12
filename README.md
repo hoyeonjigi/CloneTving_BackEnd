@@ -183,7 +183,7 @@
   <summary>
       엔티티 관계 모형 기술
   </summary>
-    <img width="846" alt="스크린샷 2024-06-18 오후 6 58 12" src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/105578140/6bae5ff5-515d-4eb9-96f1-6c20958cb435">
+    <img width="563" alt="스크린샷 2024-07-12 오후 2 37 17" src="https://github.com/user-attachments/assets/1685fdb6-c2c5-4337-94bf-3a2dffe67057">
 </details>
 <details>
   <summary>
