@@ -8,6 +8,29 @@
 
 <br>
 
+<div>
+<h1>📚TECH STACKS</h1></div>
+<div align=center> 
+  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+  <br>
+  <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
+  <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
+  <img src="https://img.shields.io/badge/jpa-003545?style=for-the-badge&logo=jpa&logoColor=white"/>
+  <img src="https://img.shields.io/badge/springdatajpa-6DB33F?style=for-the-badge&logo=springdatajpa&logoColor=white"/>
+  <img src="https://img.shields.io/badge/springsecurity-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white"/>
+  <br>
+  <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/redis-FF4438?style=for-the-badge&logo=redis&logoColor=white"/>
+  <img src="https://img.shields.io/badge/querydsl-4169E1?style=for-the-badge&logo=querydsl&logoColor=white"/>
+  <br>
+  <img src="https://img.shields.io/badge/amazonec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white"/>
+  <img src="https://img.shields.io/badge/amazons3-569A31?style=for-the-badge&logo=amazonec2&logoColor=white"/>
+  <br>
+  <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  <br>
+</div>
+
 # API 기능 설명 
 ### 프로필
 - 등록 : 프로필 정보를 입력받아 데이터베이스에 프로필 저장, 계정 내에 동일한 프로필 이름 사용 불가
@@ -25,7 +48,10 @@
 ### 콘텐츠
 - 조회수 증가 : 콘텐츠 아이디로 해당 콘텐츠 조회수 증가
 - 조회(아이디) : 콘텐츠 아이디로 해당 콘텐츠 정보를 반환
-- 조회(리스트) : 콘텐츠 리스트 조회, 쿼리 파라미터 [type: 드라마 또는 영화], [sort: 인기순, 최신순, 이름순], [page: 페이지 번호], [genreName : 해당 장르가 포함된 콘텐츠], [title: 제목 이름]  
+- 조회(리스트) : 콘텐츠 리스트 조회, 쿼리 파라미터 [type: 드라마 또는 영화], [sort: 인기순, 최신순, 이름순], [page: 페이지 번호], [genreName : 해당 장르가 포함된 콘텐츠], [title: 제목 이름]
+
+<br/>
+
 <details>
     <summary> 사용자 요구사항 명세서</summary>
     <div>
@@ -174,27 +200,6 @@
   <summary>
       아키텍쳐 설계
   </summary> 
-    <div align=center><h1>📚TECH STACKS</h1></div>
-    <div align=center> 
-      <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
-      <br>
-      <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
-      <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
-      <img src="https://img.shields.io/badge/jpa-003545?style=for-the-badge&logo=jpa&logoColor=white"/>
-      <img src="https://img.shields.io/badge/springdatajpa-6DB33F?style=for-the-badge&logo=springdatajpa&logoColor=white"/>
-      <img src="https://img.shields.io/badge/springsecurity-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white"/>
-      <br>
-      <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
-      <img src="https://img.shields.io/badge/redis-FF4438?style=for-the-badge&logo=redis&logoColor=white"/>
-      <img src="https://img.shields.io/badge/querydsl-4169E1?style=for-the-badge&logo=querydsl&logoColor=white"/>
-      <br>
-      <img src="https://img.shields.io/badge/amazonec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white"/>
-      <img src="https://img.shields.io/badge/amazons3-569A31?style=for-the-badge&logo=amazonec2&logoColor=white"/>
-      <br>
-      <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-      <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/>
-      <br>
-    </div>
     <div>
         <br>
         <p align="center"><img src="https://github.com/hoyeonjigi/CloneTving_BackEnd/assets/105578140/c9141693-2896-426f-8361-81d8d1dcfde8"></p>
