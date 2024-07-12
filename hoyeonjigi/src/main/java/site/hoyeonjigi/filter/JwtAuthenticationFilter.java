@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 import site.hoyeonjigi.common.JwtUtils;
 import site.hoyeonjigi.service.CustomUserDetailsService;
@@ -23,10 +24,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        String token = request.getHeader("Authorization");
+        String token = resolveToken(request);
 
         //JWT가 헤더에 있는 경우
-        if (token != null && jwtUtils.extractClaims(token).getHeader().getType().equals("Bearer")) {
+        if (token != null) {
             //JWT 유효성 검증
             if (jwtUtils.validateToken(token)) {
                 //토큰 유효성 검증 성공 시, 토큰에서 memberId 추출
@@ -47,5 +48,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
 
         filterChain.doFilter(request, response); // 다음 필터로 넘기기
+    }
+
+    private String resolveToken(HttpServletRequest request) {
+        String bearerToken = request.getHeader("Authorization");
+        if(StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
+            return bearerToken.substring(7);
+        }
+        return null;
     }
 }
