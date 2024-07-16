@@ -17,4 +17,10 @@ public class ProfileImage {
     private String profileImageUrl;
 
     private String profileImageCategory;
+
+    public ProfileImage(String profileImageName, String profileImageUrl, String profileImageCategory){
+        this.profileImageName = profileImageName;
+        this.profileImageUrl = profileImageUrl;
+        this.profileImageCategory = profileImageCategory;
+    }
 }
