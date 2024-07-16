@@ -1,5 +1,8 @@
 package site.hoyeonjigi.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +18,9 @@ import site.hoyeonjigi.service.GenreService;
 public class GenreController {
 
     private final GenreService genreService;
+
+    @Operation(summary = "장르 정보 조회", description = "장르 ID로 장르 정보 조회 API")
+    @ApiResponse(responseCode = "200", description = "요청에 성공하였습니다", content = @Content(mediaType = "application/json"))
     @GetMapping("/{genreId}")
     public ResponseEntity<GenreDto> getGenreInfo(@PathVariable("genreId") Long genreId){
         GenreDto genreDto = genreService.genreInfo(genreId);
