@@ -12,6 +12,8 @@ import site.hoyeonjigi.common.exception.DuplicateResourceException;
 import site.hoyeonjigi.common.exception.IncorretSortTypeException;
 import site.hoyeonjigi.common.exception.JwtRuntimeException;
 
+import java.util.NoSuchElementException;
+
 
 @RestControllerAdvice
 public class ApiExceptionHandler {
@@ -58,4 +60,10 @@ public class ApiExceptionHandler {
                 .body(e.getMessage());
     }
 
+    @ExceptionHandler(NoSuchElementException.class)
+    public ResponseEntity<String> NoSuchElementExceptionHandler (NoSuchElementException e){
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(e.getMessage());
+    }
 }
