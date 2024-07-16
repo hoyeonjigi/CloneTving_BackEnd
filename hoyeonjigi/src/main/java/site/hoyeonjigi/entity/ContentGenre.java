@@ -23,4 +23,9 @@ public class ContentGenre {
     @JoinColumn(name = "genre_id")
     private Genre genre;
 
+    public ContentGenre(Content content, Genre genre){
+        this.content = content;
+        this.genre = genre;
+    }
+
 }
