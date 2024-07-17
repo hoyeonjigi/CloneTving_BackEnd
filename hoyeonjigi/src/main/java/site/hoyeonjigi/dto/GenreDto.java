@@ -14,4 +14,9 @@ public class GenreDto {
         this.genreId = genre.getId();
         this.genreName = genre.getName();
     }
+
+    public GenreDto(Long id, String name){
+        this.genreId = id;
+        this.genreName = name;
+    }
 }

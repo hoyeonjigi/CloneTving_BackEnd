@@ -21,4 +21,15 @@ public class ProfileDto {
         this.profileImageName = profile.getProfileImage().getProfileImageName();
         this.child = profile.isChild();
     }
+
+    public ProfileDto(Long id, String name, String imgUrl, String imgName, boolean child){
+        this.profileId = id;
+        this.profileName = name;
+        this.profileImageUrl = imgUrl;
+        this.profileImageName = imgName;
+        this.child = child;
+    }
+
+    public ProfileDto(){
+    }
 }
