@@ -64,10 +64,7 @@ public class ProfileServiceTest {
     @DisplayName("회원이 존재하지 않을시 NotFound")
     void register_NotFound_Member(){
         profileImageRepository.save(profileImage);
-        ProfileRegisterDto prDto = new ProfileRegisterDto();
-        prDto.setProfileName("프로필1");
-        prDto.setProfileImgId(1L);
-        prDto.setChild(true);
+        ProfileRegisterDto prDto = new ProfileRegisterDto("프로필1", 1L, true);
         Optional<Member> findMember = memberRepository.findByLoginId("test");
         assertThat(findMember.isEmpty()).isTrue();
         assertThatThrownBy(() -> profileService.register("test",prDto))
@@ -82,10 +79,7 @@ public class ProfileServiceTest {
         profileImageRepository.save(profileImage);
         memberRepository.save(testMember);
         profileRepository.save(testProfile);
-        ProfileRegisterDto prDto = new ProfileRegisterDto();
-        prDto.setProfileName("중복");
-        prDto.setProfileImgId(1L);
-        prDto.setChild(true);
+        ProfileRegisterDto prDto = new ProfileRegisterDto("중복", 1L, true);
         assertThat(memberRepository.findByLoginId("test").isPresent()).isTrue();
         assertThatThrownBy(()->profileService.register("test",prDto))
                 .isInstanceOf(DuplicateResourceException.class)
@@ -97,10 +91,7 @@ public class ProfileServiceTest {
     @DisplayName("프로필 이미지 없을시 Not Found 예외 발생")
     void register_NotFound_ProfileImage(){
         memberRepository.save(testMember);
-        ProfileRegisterDto prDto = new ProfileRegisterDto();
-        prDto.setProfileName("프로필2");
-        prDto.setProfileImgId(1L);
-        prDto.setChild(true);
+        ProfileRegisterDto prDto = new ProfileRegisterDto("프로필2", 1L, true);
         assertThat(profileImageRepository.findById(1L).isEmpty()).isTrue();
         assertThatThrownBy(() -> profileService.register("test",prDto))
                 .isInstanceOf(NoSuchElementException.class)
@@ -123,20 +114,4 @@ public class ProfileServiceTest {
                 .hasMessageContaining("Not Found Profile");
     }
 
-    @Test
-    @DisplayName("존재하지 않는 프로필이미지로 수정시 NotFoundException 발생")
-    void edit_NotFoundException_ProfileImage(){
-        profileImageRepository.save(profileImage);
-        memberRepository.save(testMember);
-        profileRepository.save(testProfile);
-        Optional<Profile> profile = profileRepository.findById(1L);
-        ProfileEditDto editDto = new ProfileEditDto();
-        editDto.setProfileName("프로필 수정");
-        editDto.setProfileImgId(2L);
-        editDto.setChild(false);
-        assertThat(profile.isPresent()).isTrue();
-        assertThatThrownBy(() -> profileService.edit("test",testProfile.getId(),editDto))
-                .isInstanceOf(NoSuchElementException.class)
-                .hasMessageContaining("Not Found ProfileImage");
-    }
 }

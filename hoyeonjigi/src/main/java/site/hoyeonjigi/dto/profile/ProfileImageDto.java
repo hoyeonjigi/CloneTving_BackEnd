@@ -19,4 +19,11 @@ public class ProfileImageDto {
         this.profileImageName = profileImage.getProfileImageName();
         this.profileImageCategory = profileImage.getProfileImageCategory();
     }
+
+    public ProfileImageDto(Long id, String url, String name, String category){
+        this.profileImageId = id;
+        this.profileImageUrl = url;
+        this.profileImageName = name;
+        this.profileImageCategory = category;
+    }
 }

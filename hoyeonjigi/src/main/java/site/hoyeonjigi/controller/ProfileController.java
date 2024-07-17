@@ -22,7 +22,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/profiles")
 @RequiredArgsConstructor
-@Slf4j
 public class ProfileController {
 
     private final ProfileService profileService;
