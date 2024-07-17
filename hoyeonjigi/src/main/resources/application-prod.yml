@@ -5,9 +5,9 @@ spring:
       on-profile: prod
 
   datasource:
-    url: jdbc:mysql://${datasource.url}:3306/ott_tving_prod?useUnicode=true&characterEncoding=UTF-8
-    username: ${datasource.username}
-    password: ${datasource.password}
+    url: jdbc:mysql://${datasource_url}:3306/ott_tving_prod?useUnicode=true&characterEncoding=UTF-8
+    username: ${datasource_username}
+    password: ${datasource_password}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
