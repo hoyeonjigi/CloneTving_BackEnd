@@ -32,7 +32,7 @@ public class ContentDto {
         this.releaseDate = content.getReleaseDate();
         this.grade = content.isGrade();
         for(ContentGenre contentGenre : content.getContentGenres()){
-            this.genreIds.add(contentGenre.getId());
+            this.genreIds.add(contentGenre.getGenre().getId());
         }
     }
 }
