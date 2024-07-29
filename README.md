@@ -237,4 +237,25 @@
         <p align="center"><img src="https://github.com/user-attachments/assets/4a6b8a56-615c-41b3-a245-616074c85e2c"></p>
     </div>
 </details>
+<details>
+  <summary>
+      시퀀스 다이어그램
+  </summary>
+    <div>
+        <br>
+        <p align="center"><img src="https://github.com/user-attachments/assets/f6c56283-4a66-4780-a164-d64699ddb51c"></p>
+    </div>
+    <div>
+        <br>
+        <p align="center"><img src="https://github.com/user-attachments/assets/bf11b8c7-9707-47c6-b49a-7d7f5e0f176d"></p>
+    </div>
+    <div>
+        <br>
+        <p align="center"><img src="https://github.com/user-attachments/assets/0173b352-d0ae-432c-9930-836fdf4109e6"></p>
+    </div>
+    <div>
+        <br>
+        <p align="center"><img src="https://github.com/user-attachments/assets/5523c1d0-7865-4dad-b9f9-ed632250f534"></p>
+    </div>
+</details>
 
