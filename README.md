@@ -255,7 +255,15 @@
     </div>
     <div>
         <br>
-        <p align="center"><img src="https://github.com/user-attachments/assets/5523c1d0-7865-4dad-b9f9-ed632250f534"></p>
+        <p align="center"><img src="https://github.com/user-attachments/assets/ce27569d-d092-41d7-abe2-1fe47be918a1"></p>
     </div>
 </details>
-
+<details>
+  <summary>
+      트러블 슈팅
+  </summary>
+    <div>
+        <br>
+        <p align="center"><img src="https://github.com/user-attachments/assets/4a6b8a56-615c-41b3-a245-616074c85e2c"></p>
+    </div>
+</details>
