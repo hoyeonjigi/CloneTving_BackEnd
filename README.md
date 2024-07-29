@@ -209,11 +209,6 @@
 </details>
 <details>
   <summary>
-      인터페이스 설계
-  </summary>
-</details>
-<details>
-  <summary>
       아키텍쳐 설계
   </summary> 
     <div>
@@ -232,5 +227,14 @@
       데이터베이스 설계
   </summary>
     <img width="890" alt="스크린샷 2024-07-12 오후 2 40 11" src="https://github.com/user-attachments/assets/3675ced7-3631-4cba-9089-f36227493045">
+</details>
+<details>
+  <summary>
+      클래스 다이어그램
+  </summary>
+    <div>
+        <br>
+        <p align="center"><img src="https://github.com/user-attachments/assets/4a6b8a56-615c-41b3-a245-616074c85e2c"></p>
+    </div>
 </details>
 
