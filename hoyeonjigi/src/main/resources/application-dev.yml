@@ -1,0 +1,26 @@
+#develop Profile
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    url: jdbc:mysql://${datasource_url}:3306/ott_tving_dev?useUnicode=true&characterEncoding=UTF-8
+    username: ${datasource_username}
+    password: ${datasource_password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        default_batch_fetch_size: 100
+
+logging:
+  level:
+    org.hibernate.sql: debug
+

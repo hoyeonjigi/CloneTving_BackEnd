@@ -1,0 +1,18 @@
+#default Profile
+server:
+  port: 8080
+
+jwt:
+  secret: src/main/resources/files/secretkey.txt
+  token:
+    access-expiration-time: 1800000
+    refresh-expiration-time: 86400000
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  jpa:
+    open-in-view: false
