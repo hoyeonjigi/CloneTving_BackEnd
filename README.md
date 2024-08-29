@@ -4,7 +4,7 @@
 - 학습 목적으로 클론 코딩 구현한 OTT Tving 사이트 API 서버입니다
 - <b> 스웨거 주소(API 명세) : https://hoyeonjigi.site/swagger-ui/index.html </b>
 - <b> 사이트 링크 : https://clone-tving.vercel.app </b>
-- <b> 테스트 계정 : 아이디: test001 ,비밀번호 : 123
+- <b> 테스트 계정 : 아이디: test003 ,비밀번호 : test003!
 
 <br>
 
